@@ -1,3 +1,7 @@
+/*
+ * A insérer dans la console du navigateur.
+ */
+
 function simulateRightClick( element ) {
     var event1 = new MouseEvent( 'mousedown', {
         bubbles: true,
