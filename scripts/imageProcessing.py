@@ -35,8 +35,7 @@ def processing(_filename: str):
         print(_filename + " ignored")
 
 
-rep = os.listdir('../images')
-for subrep in rep:
-    for fruit in os.listdir('../images/' + subrep):
-        for file in os.listdir('../images/' + subrep + "/" + fruit):
-            processing('../images/' + subrep + "/" + fruit + "/" + file)
+for rep in os.listdir('../images'):
+    for fruit in os.listdir('../images/' + rep):
+        for file in os.listdir('../images/' + rep + "/" + fruit):
+            processing('../images/' + rep + "/" + fruit + "/" + file)
