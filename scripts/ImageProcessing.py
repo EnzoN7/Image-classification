@@ -9,7 +9,7 @@ def processing(_filename: str):
 
     enhancer = ImageEnhance.Brightness(im)
 
-    # Rotate the original image 90, 180, and 270°
+    # Rotate the original image of 90, 180, and 270°
     for i in [90, 180, 270]:
         try:
             im_output = im.rotate(i)
@@ -17,7 +17,7 @@ def processing(_filename: str):
         except Exception:
             print(_filename + " ignored")
 
-    # Rotate the darkened image 0, 90, 180, and 270°
+    # Rotate the darkened image of 0, 90, 180, and 270°
     factor = 0.5
     try:
         im_output = enhancer.enhance(factor)
@@ -27,7 +27,7 @@ def processing(_filename: str):
     except Exception:
         print(_filename + " ignored")
 
-    # Rotate the brightened image 0, 90, 180, and 270°
+    # Rotate the brightened image of 0, 90, 180, and 270°
     factor = 1.5
     try:
         im_output = enhancer.enhance(factor)
