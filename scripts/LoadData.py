@@ -19,6 +19,7 @@ def load_data(data_path, classes, dataset='train', image_size=64):
     current_index = 0
 
     # Parcours des différents répertoires pour collecter les images
+    # Gestion de la progress bar : pip install progressbar2
     with progressbar.ProgressBar(max_value=10) as bar:
         for idx_class in range(len(classes)):
             dirs = sorted(os.listdir(data_path + dataset + '/' + classes[idx_class]))
