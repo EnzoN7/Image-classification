@@ -6,7 +6,6 @@ class BasicConvolutionalNetwork(tf.keras.Model):
 
     def __init__(self, _nbclasses, _imagesize):
         super().__init__()
-
         self.conv1 = Conv2D(32, 3, activation="relu", input_shape=[_imagesize, _imagesize, 3])
         self.conv2 = Conv2D(64, 3, activation="relu")
         self.conv3 = Conv2D(94, 3, activation="relu")
