@@ -6,6 +6,6 @@
 
 # Validité du modèle VGG16Network
    BD réduite standard :                 62.82% / 10 epochs
-   BD réduite avec ImageDataGenerator :  XX.XX%
+   BD réduite avec ImageDataGenerator :  74.36% / 10 epochs
    BD complète standard :                XX.XX%
    BD complète avec ImageDataGenerator : XX.XX%
