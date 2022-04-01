@@ -1,3 +1,4 @@
+from random import randint
 import matplotlib.pyplot as plt
 
 
@@ -23,4 +24,17 @@ def plot_training_analysis(_history, _t_metrics):
     plt.title('Training and validation loss')
     plt.legend()
 
+    plt.show()
+
+
+def plot_random_images(_xtrain, _ytrain, _labels):
+    plt.figure(figsize=(12, 12))
+    
+    indices = [randint(0, len(_xtrain) - 1) for i in range(0, 9)]
+    for i in range(0, 9):
+        plt.subplot(3, 3, i+1)
+        plt.title(_labels[int(_ytrain[indices[i]])])
+        plt.imshow(_xtrain[indices[i]])
+
+    plt.tight_layout()
     plt.show()
