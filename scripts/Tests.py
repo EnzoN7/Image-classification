@@ -1,7 +1,7 @@
 import numpy as np
 
 
-def test_data(_model, _labels, _xtesti, _ytesti, _print):
+def test_data(_model, _labels, _idx, _lendata, _xtesti, _ytesti, _print):
     data = []
     data.append(_xtesti)
     data = np.asarray(data)
@@ -14,7 +14,7 @@ def test_data(_model, _labels, _xtesti, _ytesti, _print):
     res = prediction[0][idxBestPrediction] * 100
 
     if _print:
-        print("PREDICTIONS")
+        print("PREDICTIONS sur la donnée n°" + str(_idx) + "/" + str(_lendata - 1))
         for i in range(0, len(_labels)):
             print('     ' + _labels[i] + ' -> ' + "{0:.2f}%".format(prediction[0][i] * 100.))
         print('\nRESULTAT :         ' + bestPrediction + ' / ' + "{0:.2f}%".format(res))
@@ -26,7 +26,7 @@ def test_data(_model, _labels, _xtesti, _ytesti, _print):
 def test_model(_model, _labels, _xtest, _ytest):
     sim = len(_xtest)
     for i in range(len(_xtest)):
-        bestPrediction = test_data(_model, _labels, _xtest[i], _ytest[i], False)
+        bestPrediction = test_data(_model, _labels, 0, 0, _xtest[i], _ytest[i], False)
         if (bestPrediction != _labels[int(_ytest[i])]):
             sim -= 1
     print("\nVALIDITE DU MODELE : " + "{0:.2f}%".format(sim / len(_xtest) * 100))

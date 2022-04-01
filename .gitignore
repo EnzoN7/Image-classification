@@ -2,3 +2,6 @@
 scripts/__pycache__/LoadData.cpython-38.pyc
 scripts/__pycache__/LoadData.cpython-39.pyc
 models/__pycache__/BasicConvolutionalNetwork.cpython-39.pyc
+models/__pycache__/VGG16Network.cpython-39.pyc
+scripts/__pycache__/PlotTrainingAnalysis.cpython-39.pyc
+*.pyc
