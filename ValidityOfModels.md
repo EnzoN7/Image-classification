@@ -1,11 +1,11 @@
 # Validité du modèle BasicConvolutionalNetwork
-   BD réduite (3 classes) standard :                66.67% / 10 epochs, 68.59% / 30 epochs
-   BD réduite (3 classes) avec ImageDataGenerator : 67.95% / 10 epochs, 64.74% / 30 epochs
-   BD complète standard :                           XX.XX%
+   BD réduite (3 classes) standard :                66.67% / 10 epochs, 68.59% / 30 epochs \\
+   BD réduite (3 classes) avec ImageDataGenerator : 67.95% / 10 epochs, 64.74% / 30 epochs \\
+   BD complète standard :                           XX.XX% \\
    BD complète avec ImageDataGenerator :            XX.XX%
 
 # Validité du modèle VGG16Network
-   BD réduite (3 classes) standard :                62.82% / 10 epochs
-   BD réduite (3 classes) avec ImageDataGenerator : 74.36% / 10 epochs
-   BD complète standard :                           XX.XX%
+   BD réduite (3 classes) standard :                62.82% / 10 epochs \\
+   BD réduite (3 classes) avec ImageDataGenerator : 74.36% / 10 epochs \\
+   BD complète standard :                           XX.XX% \\
    BD complète avec ImageDataGenerator :            XX.XX%
