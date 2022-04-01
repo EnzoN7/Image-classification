@@ -2,6 +2,7 @@ import tensorflow as tf
 from keras.layers import Dense, Flatten
 from tensorflow.keras.applications import VGG16
 
+
 class VGG16Network(tf.keras.Model):
 
     def __init__(self, _nbclasses, _imagesize):

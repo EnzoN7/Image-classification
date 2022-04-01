@@ -9,13 +9,15 @@ def plot_training_analysis(_history, _t_metrics):
 
     epochs = range(len(acc))
 
+    plt.figure(figsize=(8, 4))
+
+    plt.subplot(1, 2, 1)
     plt.plot(epochs, acc, 'b', linestyle="--",label='Training acc')
     plt.plot(epochs, val_acc, 'g', label='Validation acc')
     plt.title('Training and validation accuracy')
     plt.legend()
 
-    plt.figure()
-
+    plt.subplot(1, 2, 2)
     plt.plot(epochs, loss, 'b', linestyle="--",label='Training loss')
     plt.plot(epochs, val_loss,'g', label='Validation loss')
     plt.title('Training and validation loss')

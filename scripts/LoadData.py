@@ -34,8 +34,8 @@ def load_data(_datapath: str, _classes: str, _dataset: str ='train', _imagesize:
                     # Conversion de l'image en RGB
                     img = img.convert('RGB')
                     # Redimensionnement de l'image et écriture dans la variable de retour x
-                    img = img.resize((_imagesize, _imagesize))
-                    x[current_index] = np.asarray(img)
+                    img = img.resize(size=(_imagesize, _imagesize))
+                    x[current_index] = np.asarray(img) / 255
                     # Écriture du label associé dans la variable de retour y
                     y[current_index] = idx_class
                     current_index += 1
