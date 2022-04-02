@@ -2,9 +2,9 @@ from random import randint
 import matplotlib.pyplot as plt
 
 
-def plot_training_analysis(_history, _t_metrics):
-    acc = _history.history[_t_metrics]
-    val_acc = _history.history['val_' + _t_metrics]
+def plot_training_analysis(_history, _metrics):
+    acc = _history.history[_metrics]
+    val_acc = _history.history['val_' + _metrics]
     loss = _history.history['loss']
     val_loss = _history.history['val_loss']
 
