@@ -1,1 +1,7 @@
 *.pyc
+checkpoint/vgg16comp/.data-00000-of-00001
+checkpoint/vgg16comp/.index
+checkpoint/vgg16comp/checkpoint
+checkpoint/vgg16red/.data-00000-of-00001
+checkpoint/vgg16red/.index
+checkpoint/vgg16red/checkpoint
