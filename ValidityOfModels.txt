@@ -16,6 +16,7 @@
                                                     74.36% / 10 epochs / callback "ModelCheckpoint"
 
    BD complète standard :                           Loss 100.67%, Accuracy 86.93% / 20 epochs / callback "ModelCheckpoint"
+                                                    Loss 81.77%, Accuracy 84.47% / 10 epochs
 
    BD complète avec ImageDataGenerator :            83.71% / 10 epochs / callback "ModelCheckpoint"
                                                     82.39% / 10 epochs
