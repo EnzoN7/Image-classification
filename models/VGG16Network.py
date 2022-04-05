@@ -14,8 +14,8 @@ class VGG16Network(tf.keras.Model):
         self.dense1 = Dense(256, activation='relu')
         self.dense2 = Dense(_nbclasses, activation='softmax')
 
-    def call(self, inputs):
-        x = self.vgg16(inputs)
+    def call(self, _inputs):
+        x = self.vgg16(_inputs)
         x = self.flatten(x)
         x = self.dense1(x)
         return self.dense2(x)
