@@ -7,9 +7,11 @@ class VGG16Network(tf.keras.Model):
 
     def __init__(self, _nbclasses, _imagesize):
         super().__init__()
-        self.vgg16 = VGG16(weights='imagenet',
+        conv_base = VGG16(weights='imagenet',
                            include_top=False,
                            input_shape=(_imagesize, _imagesize, 3))
+        conv_base.trainable = False
+        self.vgg16 = conv_base
         self.flatten = Flatten()
         self.dense1 = Dense(256, activation='relu')
         self.dense2 = Dense(_nbclasses, activation='softmax')

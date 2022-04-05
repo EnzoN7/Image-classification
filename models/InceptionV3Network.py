@@ -6,9 +6,11 @@ class InceptionV3Network(tf.keras.Model):
 
     def __init__(self, _nbclasses, _imagesize):
         super().__init__()
-        self.inceptionv3 = InceptionV3(weights='imagenet',
-                                       include_top=False,
-                                       input_shape=(_imagesize, _imagesize, 3))
+        base = InceptionV3(weights='imagenet',
+                           include_top=False,
+                           input_shape=(_imagesize, _imagesize, 3))
+        base.trainable = False
+        self.inceptionv3 = base
         self.globalAveragePooling2D = GlobalAveragePooling2D()
         self.dropout = Dropout(0.5)
         self.dense = Dense(_nbclasses, activation='softmax')
