@@ -6,6 +6,7 @@ def processing(_filename: str):
     im = Image.open(_filename)
 
     _filename = _filename[0: len(_filename) - 4]
+    _filename = "FIDS30_" + _filename
 
     enhancer = ImageEnhance.Brightness(im)
 
@@ -18,7 +19,7 @@ def processing(_filename: str):
             print(_filename + " ignored")
 
     # Rotate the darkened image of 0, 90, 180, and 270°
-    factor = 0.5
+    factor = 0.6
     try:
         im_output = enhancer.enhance(factor)
         for i in [0, 90, 180, 270]:
@@ -28,7 +29,7 @@ def processing(_filename: str):
         print(_filename + " ignored")
 
     # Rotate the brightened image of 0, 90, 180, and 270°
-    factor = 1.5
+    factor = 1.4
     try:
         im_output = enhancer.enhance(factor)
         for i in [0, 90, 180, 270]:
