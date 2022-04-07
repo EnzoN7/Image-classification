@@ -5,7 +5,7 @@ import time
 import progressbar
 
 
-def load_data(_datapath: str, _classes: str, _dataset: str ='train', _imagesize: int =64):
+def load_data(_datapath: str, _classes, _dataset: str ='train', _imagesize: int =64):
     num_images = 0
     for i in range(len(_classes)):
         dirs = sorted(os.listdir(_datapath + _dataset + '/' + _classes[i]))
@@ -20,7 +20,7 @@ def load_data(_datapath: str, _classes: str, _dataset: str ='train', _imagesize:
 
     # Parcours des différents répertoires pour collecter les images
     # Gestion de la progress bar : pip install progressbar2
-    with progressbar.ProgressBar(max_value=20) as bar:
+    with progressbar.ProgressBar(max_value=len(_classes)) as bar:
         for idx_class in range(len(_classes)):
             dirs = sorted(os.listdir(_datapath + _dataset + '/' + _classes[idx_class]))
             num_images += len(dirs)
