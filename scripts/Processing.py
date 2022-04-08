@@ -6,7 +6,6 @@ def processing(_filename: str):
     im = Image.open(_filename)
 
     _filename = _filename[0: len(_filename) - 4]
-    _filename = "FIDS30_" + _filename
 
     enhancer = ImageEnhance.Brightness(im)
 
@@ -16,6 +15,7 @@ def processing(_filename: str):
             im_output = im.rotate(i)
             im_output.save(_filename + "_" + str(i) + ".jpg")
         except Exception:
+            os.remove(_filename + "_" + str(i) + ".jpg")
             print(_filename + " ignored")
 
     # Rotate the darkened image of 0, 90, 180, and 270°
@@ -26,6 +26,7 @@ def processing(_filename: str):
             im_output = im_output.rotate(i)
             im_output.save(_filename + "_dark_" + str(i) + ".jpg")
     except Exception:
+        os.remove(_filename + "_dark_" + str(i) + ".jpg")
         print(_filename + " ignored")
 
     # Rotate the brightened image of 0, 90, 180, and 270°
@@ -36,10 +37,12 @@ def processing(_filename: str):
             im_output = im_output.rotate(i)
             im_output.save(_filename + "_bright_" + str(i) + ".jpg")
     except Exception:
+        os.remove(_filename + "_bright_" + str(i) + ".jpg")
         print(_filename + " ignored")
         
 
-for rep in os.listdir('../images'):
-    for fruit in os.listdir('../images/' + rep):
-        for file in os.listdir('../images/' + rep + "/" + fruit):
-            processing('../images/' + rep + "/" + fruit + "/" + file)
+def database_processing(_db):
+    for rep in os.listdir('../databases/' + _db):
+        for fruit in os.listdir('../databases/' + _db + '/' + rep):
+            for file in os.listdir('../databases/' + _db + '/' + rep + '/' + fruit):
+                processing('../databases/' + _db + '/' + rep + '/' + fruit + '/' + file)
