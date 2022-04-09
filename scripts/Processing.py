@@ -15,7 +15,6 @@ def processing(_filename: str):
             im_output = im.rotate(i)
             im_output.save(_filename + "_" + str(i) + ".jpg")
         except Exception:
-            os.remove(_filename + "_" + str(i) + ".jpg")
             print(_filename + " ignored")
 
     # Rotate the darkened image of 0, 90, 180, and 270°
@@ -26,7 +25,6 @@ def processing(_filename: str):
             im_output = im_output.rotate(i)
             im_output.save(_filename + "_dark_" + str(i) + ".jpg")
     except Exception:
-        os.remove(_filename + "_dark_" + str(i) + ".jpg")
         print(_filename + " ignored")
 
     # Rotate the brightened image of 0, 90, 180, and 270°
@@ -37,7 +35,6 @@ def processing(_filename: str):
             im_output = im_output.rotate(i)
             im_output.save(_filename + "_bright_" + str(i) + ".jpg")
     except Exception:
-        os.remove(_filename + "_bright_" + str(i) + ".jpg")
         print(_filename + " ignored")
         
 
