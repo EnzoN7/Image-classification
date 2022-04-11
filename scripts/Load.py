@@ -7,8 +7,11 @@ import time
 def load_data(_datapath: str, _classes, _dataset: str ='train', _imagesize: int =64):
     num_images = 0
     for i in range(len(_classes)):
-        dirs = sorted(os.listdir(_datapath + _dataset + '/' + _classes[i]))
-        num_images += len(dirs)
+        try:
+            dirs = sorted(os.listdir(_datapath + _dataset + '/' + _classes[i]))
+            num_images += len(dirs)
+        except FileNotFoundError:
+            continue
 
     x = np.zeros((num_images, _imagesize, _imagesize, 3))
     y = np.zeros((num_images, 1))
