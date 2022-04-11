@@ -22,8 +22,11 @@ def load_data(_datapath: str, _classes, _dataset: str ='train', _imagesize: int 
 
     # Parcours des différents répertoires pour collecter les images
     for idx_class in range(len(_classes)):
-        dirs = sorted(os.listdir(_datapath + _dataset + '/' + _classes[idx_class]))
-        num_images += len(dirs)
+        try:
+            dirs = sorted(os.listdir(_datapath + _dataset + '/' + _classes[i]))
+            num_images += len(dirs)
+        except FileNotFoundError:
+            continue
 
         # Chargement des images
         for idx_img in range(len(dirs)):
