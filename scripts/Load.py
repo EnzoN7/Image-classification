@@ -16,7 +16,7 @@ def load_data(_datapath: str, _classes, _dataset: str ='train', _imagesize: int 
     x = np.zeros((num_images, _imagesize, _imagesize, 3))
     y = np.zeros((num_images, 1))
 
-    print("DATASET         : " + _dataset)
+    print("DATASET         : " + _datapath + _dataset)
     print("NOMBRE D'IMAGES : " + str(num_images) + "\n")
 
     current_index = 0
